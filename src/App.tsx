@@ -11,18 +11,20 @@ const initialValues: FormValues = {
 }
 
 const App = () => {
-  const onSubmit = (values: FormValues) => {
+  const onSubmit = (values: FormValues): void => {
     console.log(values)
   }
   return (
     <Formik initialValues={initialValues} onSubmit={onSubmit}>
-      <Form>
+      {(props) => {
+        return (
+          <Form>
         <div>
           <label>Name</label>
           <Field  as='input' />
           <ErrorMessage name='name'/>
         </div>
-      </Form>
+      </Form>)}}
     </Formik>
   );
 }
