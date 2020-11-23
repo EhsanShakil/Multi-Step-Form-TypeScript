@@ -21,7 +21,7 @@ const App = () => {
           <Form>
         <div>
           <label>Name</label>
-          <Field  as='input' />
+          <Field  as='input' name='name'/>
           <ErrorMessage name='name'/>
         </div>
       </Form>)}}
