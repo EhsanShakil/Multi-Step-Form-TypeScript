@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from "yup";
+import {TextField} from '@material-ui/core'
 
 interface FormValues {
   name: string
@@ -17,7 +18,7 @@ const nameSchema = Yup.object().shape({
 
 const App = () => {
   const onSubmit = (values: FormValues): void => {
-    console.log(values)
+    alert(values.name)
   }
   return (
     <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={nameSchema}>
@@ -25,8 +26,8 @@ const App = () => {
         return (
           <Form>
         <div>
-          <label>Name</label>
-          <Field  as='input' name='name'/>
+          {/* <label>Name</label> */}
+              <Field as={TextField} variant='standard' label='Name' name='name'/>
           <ErrorMessage name='name'/>
             </div>
             <button disabled={!dirty || !isValid} type="submit">Sign Up</button>
