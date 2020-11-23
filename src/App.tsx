@@ -5,20 +5,26 @@ import * as Yup from "yup";
 import {TextField} from '@material-ui/core'
 
 interface FormValues {
-  name: string
+  first_name: string,
+  last_name: string,
+  email: string,
 }
 
 const initialValues: FormValues = {
-  name: ''
+  first_name: '',
+  last_name: '',
+  email: '',
 }
 
 const nameSchema = Yup.object().shape({
-  name: Yup.string().required()
+  first_name: Yup.string().required(),
+  last_name: Yup.string().required(),
+  email: Yup.string().required()
 })
 
 const App = () => {
   const onSubmit = (values: FormValues): void => {
-    alert(values.name)
+    alert(values)
   }
   return (
     <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={nameSchema}>
@@ -27,8 +33,10 @@ const App = () => {
           <Form>
         <div>
           {/* <label>Name</label> */}
-              <Field as={TextField} variant='standard' label='Name' name='name'/>
-          <ErrorMessage name='name'/>
+              <Field as={TextField} variant='standard' label='First Name' name='first_name' helperText={<ErrorMessage name='first_name'/>}/>
+              <Field as={TextField} variant='standard' label='Last Name' name='last_name' helperText={<ErrorMessage name='last_name'/>}/>
+              <Field as={TextField} variant='standard' label='Email' name='email' helperText={<ErrorMessage name='email'/>}/>             
+
             </div>
             <button disabled={!dirty || !isValid} type="submit">Sign Up</button>
       </Form>)}}
