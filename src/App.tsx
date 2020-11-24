@@ -1,8 +1,8 @@
 import React from "react";
 import "./App.css";
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik, Form} from "formik";
 import * as Yup from "yup";
-import { TextField } from "@material-ui/core";
+import FormField from "./FormField";
 
 interface FormValues {
   first_name: string;
@@ -35,30 +35,10 @@ const App = () => {
       {({ dirty, isValid }) => {
         return (
           <Form>
-            <div className="form">
-              {/* <label>Name</label> */}
-              <Field
-                as={TextField}
-                variant="standard"
-                label="First Name"
-                name="first_name"
-                helperText={<ErrorMessage name="first_name" />}
-              />
-              <Field
-                as={TextField}
-                variant="standard"
-                label="Last Name"
-                name="last_name"
-                helperText={<ErrorMessage name="last_name" />}
-                
-              />
-              <Field
-                as={TextField}
-                variant="standard"
-                label="Email"
-                name="email"
-                helperText={<ErrorMessage name="email" />}
-              />
+            <div className="form"> 
+              <FormField label="First Name" name="first_name" />
+              <FormField label="Last Name" name="last_name"/>
+              <FormField label="Email" name="email"/>
               <button disabled={!dirty || !isValid} type="submit">
                 Sign Up
               </button>
