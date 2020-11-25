@@ -15,7 +15,6 @@ const FormField: React.FC<FormFieldProps> = ({ label, name }) => {
         label={label}
         helperText={<ErrorMessage name={name} />}
       />
-      
   );
 };
 
