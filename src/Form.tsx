@@ -26,9 +26,10 @@ const nameSchema = Yup.object().shape({
 
 });
 
-const App = () => {
+const App = ({submit}: any) => {
   const onSubmit = (values: FormValues): void => {
     alert(JSON.stringify(values));
+          submit(1);
   };
   return (
     <Formik

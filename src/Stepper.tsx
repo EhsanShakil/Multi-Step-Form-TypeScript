@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Stepper from "@material-ui/core/Stepper";
 import Step from "@material-ui/core/Step";
 import StepLabel from "@material-ui/core/StepLabel";
+import Form from './Form'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,11 +22,11 @@ function getSteps() {
   return ["Add Address", "Add payment", "Review", "Submitted"];
 }
 
-function getStepContent(stepIndex: number) {
+function getStepContent(stepIndex: any, setStep:any) {
   switch (stepIndex) {
     case 0:
       return (
-         "1st Component"
+        <Form submit={ setStep}/>
       );
     case 1:
       return (
@@ -54,6 +55,7 @@ export default function HorizontalLabelPositionBelowStepper() {
           </Step>
         ))}
       </Stepper>
+      {getStepContent(activeStep, setActiveStep)}
     </div>
   );
 }
