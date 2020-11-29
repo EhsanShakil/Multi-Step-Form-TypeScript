@@ -10,7 +10,6 @@ interface FormValues {
   address: string;
   city: '';
   zip_code: string;
-
 }
 
 const initialValues: FormValues = {
@@ -29,10 +28,10 @@ const nameSchema = Yup.object().shape({
   zip_code: Yup.number().required(),
 });
 
-const App = ({submit}: any) => {
+const AddressForm = ({submit}: any) => {
   const onSubmit = (values: FormValues): void => {
     alert(JSON.stringify(values));
-          submit(2);
+          submit(1);
   };
   return (
     <Formik
@@ -60,4 +59,4 @@ const App = ({submit}: any) => {
   );
 };
 
-export default App;
+export default AddressForm;
