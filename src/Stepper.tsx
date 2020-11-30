@@ -4,7 +4,7 @@ import Stepper from "@material-ui/core/Stepper";
 import Step from "@material-ui/core/Step";
 import StepLabel from "@material-ui/core/StepLabel";
 import AddressForm from './AddressForm'
-import Form from './Form'
+import PaymentForm from './PaymentForm'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -31,7 +31,7 @@ function getStepContent(stepIndex: any, setStep:any) {
       );
     case 1:
       return (
-        <Form submit={ setStep}/>
+        <PaymentForm submit={ setStep}/>
       );
     case 2:
       return "3rd Component";

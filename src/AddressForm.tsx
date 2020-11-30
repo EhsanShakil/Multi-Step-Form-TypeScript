@@ -2,13 +2,13 @@ import React from "react";
 import "./App.css";
 import { Formik, Form} from "formik";
 import * as Yup from "yup";
-import FormField from "./FormField";
+import FormField from "./PaymentFormField";
 
 interface FormValues {
   first_name: string;
   last_name: string;
   address: string;
-  city: '';
+  city: string;
   zip_code: string;
 }
 

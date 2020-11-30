@@ -2,23 +2,18 @@ import React from "react";
 import "./App.css";
 import { Formik, Form} from "formik";
 import * as Yup from "yup";
-import FormField from "./FormField";
+import FormField from "./PaymentFormField";
 
 interface FormValues {
-  first_name: string;
-  last_name: string;
-  address: string;
-  city: '';
-  zip_code: string;
-
+  Card_Number: number;
+  CVV: number;
+  Expiry_Date: number;
 }
 
 const initialValues: FormValues = {
-  first_name: "",
-  last_name: "",
-  address: '',
-  city: '',
-  zip_code: '',
+  Card_Number: '',
+  CVV: '',
+  Expiry_Date: ""
 };
 
 const nameSchema = Yup.object().shape({
@@ -29,7 +24,7 @@ const nameSchema = Yup.object().shape({
   zip_code: Yup.number().required(),
 });
 
-const App = ({submit}: any) => {
+const PaymentForm = ({submit}: any) => {
   const onSubmit = (values: FormValues): void => {
     alert(JSON.stringify(values));
           submit(2);
@@ -60,4 +55,4 @@ const App = ({submit}: any) => {
   );
 };
 
-export default App;
+export default PaymentForm;
