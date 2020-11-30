@@ -7,7 +7,7 @@ interface FormFieldProps {
   name: string;
 }
 
-const FormField: React.FC<FormFieldProps> = ({ label, name }) => {
+const PaymentFormField: React.FC<FormFieldProps> = ({ label, name }) => {
   return (
       <Field
         as={TextField}
@@ -18,4 +18,4 @@ const FormField: React.FC<FormFieldProps> = ({ label, name }) => {
   );
 };
 
-export default FormField;
+export default PaymentFormField;

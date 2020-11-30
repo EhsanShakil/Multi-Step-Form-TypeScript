@@ -2,26 +2,24 @@ import React from "react";
 import "./App.css";
 import { Formik, Form} from "formik";
 import * as Yup from "yup";
-import FormField from "./PaymentFormField";
+import PaymentFormField from "./PaymentFormField";
 
 interface FormValues {
-  Card_Number: number;
-  CVV: number;
-  Expiry_Date: number;
+  Card_Number: string;
+  CVV: string;
+  Expiry_Date: string;
 }
 
 const initialValues: FormValues = {
   Card_Number: '',
   CVV: '',
-  Expiry_Date: ""
+  Expiry_Date: '',
 };
 
 const nameSchema = Yup.object().shape({
-  first_name: Yup.string().required(),
-  last_name: Yup.string().required(),
-  address: Yup.string().required(),
-  city: Yup.string().required(),
-  zip_code: Yup.number().required(),
+  Card_Number: Yup.number().required(),
+  CVV: Yup.number().required(),
+  Expiry_Date: Yup.date().required(),
 });
 
 const PaymentForm = ({submit}: any) => {
@@ -39,11 +37,9 @@ const PaymentForm = ({submit}: any) => {
         return (
           <Form>
             <div className="form"> 
-              <FormField label="First Name" name="first_name" />
-              <FormField label="Last Name" name="last_name"/>
-              <FormField label="Address" name="address"/>
-              <FormField label="City" name="city" />
-              <FormField label="Zip Code" name="zip_code"/>
+              <PaymentFormField label="Card Number" name="Card_Number" />
+              <PaymentFormField label="CVV" name="CVV"/>
+              <PaymentFormField label="Expiry Date" name="Expiry_Date"/>
               <button disabled={!dirty || !isValid} type="submit">
                 Next
               </button>
