@@ -127,9 +127,9 @@ function getStepContent(
         />
       );
     case 2:
-      return <Review values={formValues} />;
+      return <Review submit={setStep} values={formValues} />;
     case 3:
-      return "Your details have been submitted successfully";
+      return <div className='form'>"Your details have been submitted successfully"</div>;
     default:
       return "Unknown stepIndex";
   }
