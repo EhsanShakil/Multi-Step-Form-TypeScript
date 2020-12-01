@@ -5,16 +5,18 @@ import { TextField } from "@material-ui/core";
 interface FormFieldProps {
   label: string;
   name: string;
+  type: string;
 }
 
-const PaymentFormField: React.FC<FormFieldProps> = ({ label, name }) => {
+const PaymentFormField: React.FC<FormFieldProps> = ({ label, name, type }) => {
   return (
-      <Field
-        as={TextField}
-        name={name}
-        label={label}
-        helperText={<ErrorMessage name={name} />}
-      />
+    <Field
+      as={TextField}
+      name={name}
+      label={label}
+      helperText={<ErrorMessage name={name} />}
+      type={type}
+    />
   );
 };
 

@@ -10,7 +10,7 @@ interface FormValues {
   Expiry_Date: string;
 }
 
-const initialValues: FormValues = {
+const initialValues:FormValues = {
   Card_Number: '',
   CVV: '',
   Expiry_Date: '',
@@ -37,9 +37,9 @@ const PaymentForm = ({submit}: any) => {
         return (
           <Form>
             <div className="form"> 
-              <PaymentFormField label="Card Number" name="Card_Number" />
-              <PaymentFormField label="CVV" name="CVV"/>
-              <PaymentFormField label="Expiry Date" name="Expiry_Date"/>
+              <PaymentFormField type='number' label="Card Number" name="Card_Number" />
+              <PaymentFormField type='number' label="CVV" name="CVV"/>
+              <PaymentFormField type='date' label="" name="Expiry_Date"/>
               <button disabled={!dirty || !isValid} type="submit">
                 Next
               </button>

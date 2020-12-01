@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import { Formik, Form} from "formik";
 import * as Yup from "yup";
-import FormField from "./PaymentFormField";
+import AddressFormField from "./AddressFormField";
 
 interface FormValues {
   first_name: string;
@@ -43,11 +43,11 @@ const AddressForm = ({submit}: any) => {
         return (
           <Form>
             <div className="form"> 
-              <FormField label="First Name" name="first_name" />
-              <FormField label="Last Name" name="last_name"/>
-              <FormField label="Address" name="address"/>
-              <FormField label="City" name="city" />
-              <FormField label="Zip Code" name="zip_code"/>
+              <AddressFormField label="First Name" name="first_name" />
+              <AddressFormField label="Last Name" name="last_name"/>
+              <AddressFormField label="Address" name="address"/>
+              <AddressFormField label="City" name="city" />
+              <AddressFormField label="Zip Code" name="zip_code"/>
               <button disabled={!dirty || !isValid} type="submit">
                 Next
               </button>
