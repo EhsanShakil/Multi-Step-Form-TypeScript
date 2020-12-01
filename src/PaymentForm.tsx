@@ -1,5 +1,4 @@
 import React from "react";
-import "./App.css";
 import { Formik, Form} from "formik";
 import * as Yup from "yup";
 import PaymentFormField from "./PaymentFormField";
@@ -22,10 +21,10 @@ const nameSchema = Yup.object().shape({
   Expiry_Date: Yup.date().required(),
 });
 
-const PaymentForm = ({submit}: any) => {
+const PaymentForm = ({submit,prevValues, setFormValues}: any) => {
   const onSubmit = (values: FormValues): void => {
-    alert(JSON.stringify(values));
-          submit(2);
+    submit(2)
+    setFormValues({ ...values, ...prevValues })
   };
   return (
     <Formik

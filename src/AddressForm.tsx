@@ -1,5 +1,4 @@
 import React from "react";
-import "./App.css";
 import { Formik, Form} from "formik";
 import * as Yup from "yup";
 import AddressFormField from "./AddressFormField";
@@ -28,10 +27,10 @@ const nameSchema = Yup.object().shape({
   zip_code: Yup.number().required(),
 });
 
-const AddressForm = ({submit}: any) => {
+const AddressForm = ({submit,prevValues, setFormValues}: any) => {
   const onSubmit = (values: FormValues): void => {
-    alert(JSON.stringify(values));
-          submit(1);
+    submit(1)
+    setFormValues({ ...values, ...prevValues })
   };
   return (
     <Formik
