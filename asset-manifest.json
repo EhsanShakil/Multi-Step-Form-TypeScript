@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Multi-Step-Form-TypeScript/static/css/main.54e720ba.chunk.css",
+    "main.js": "/Multi-Step-Form-TypeScript/static/js/main.903070df.chunk.js",
+    "main.js.map": "/Multi-Step-Form-TypeScript/static/js/main.903070df.chunk.js.map",
+    "runtime-main.js": "/Multi-Step-Form-TypeScript/static/js/runtime-main.2d82ab31.js",
+    "runtime-main.js.map": "/Multi-Step-Form-TypeScript/static/js/runtime-main.2d82ab31.js.map",
+    "static/js/2.fc830a56.chunk.js": "/Multi-Step-Form-TypeScript/static/js/2.fc830a56.chunk.js",
+    "static/js/2.fc830a56.chunk.js.map": "/Multi-Step-Form-TypeScript/static/js/2.fc830a56.chunk.js.map",
+    "static/js/3.37da5369.chunk.js": "/Multi-Step-Form-TypeScript/static/js/3.37da5369.chunk.js",
+    "static/js/3.37da5369.chunk.js.map": "/Multi-Step-Form-TypeScript/static/js/3.37da5369.chunk.js.map",
+    "index.html": "/Multi-Step-Form-TypeScript/index.html",
+    "static/css/main.54e720ba.chunk.css.map": "/Multi-Step-Form-TypeScript/static/css/main.54e720ba.chunk.css.map",
+    "static/js/2.fc830a56.chunk.js.LICENSE.txt": "/Multi-Step-Form-TypeScript/static/js/2.fc830a56.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2d82ab31.js",
+    "static/js/2.fc830a56.chunk.js",
+    "static/css/main.54e720ba.chunk.css",
+    "static/js/main.903070df.chunk.js"
+  ]
+}
